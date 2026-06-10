@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Bhaijan! 🎂</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="bhaijan_birthday.css" />
+</head>
+
+<body>
+
+  <canvas id="fireworks-canvas"></canvas>
+
+  <!-- ══ HERO ══ -->
+  <div id="hero">
+    <div class="stars-bg"></div>
+    <p class="eyebrow">A Special Day — June 12, 2026</p>
+    <div class="gold-line"></div>
+    <div class="age-badge">
+      <span class="num">34</span>
+      <span class="label">Years</span>
+    </div>
+    <h1>Happy Birthday,<br /><span>Bhaijan!</span></h1>
+    <button class="confetti-btn" onclick="burstFireworks()">🎉 Celebrate!</button>
+    <div class="scroll-hint">
+      <span>Scroll Now</span>
+      <span class="scroll-arrow">↓</span>
+    </div>
+  </div>
+
+  <!-- ══ COUNTDOWN ══ -->
+  <section id="countdown-section" class="fade-up">
+    <p class="section-label">Time Check</p>
+    <h2>It's <span style="color:var(--gold)">Your Day,</span> Bhaijan</h2>
+    <p style="color:var(--gray);line-height:1.8;max-width:560px;margin:0 auto 1rem;">
+      June 12th is finally here</p>
+    <div class="birthday-msg" id="bday-msg">🎂 It's Your Birthday TODAY! 🎂</div>
+    <div class="countdown-grid" id="countdown-grid">
+      <div class="cd-box">
+        <div class="cd-num" id="cd-days">--</div>
+        <div class="cd-label">Days</div>
+      </div>
+      <div class="cd-box">
+        <div class="cd-num" id="cd-hours">--</div>
+        <div class="cd-label">Hours</div>
+      </div>
+      <div class="cd-box">
+        <div class="cd-num" id="cd-mins">--</div>
+        <div class="cd-label">Minutes</div>
+      </div>
+      <div class="cd-box">
+        <div class="cd-num" id="cd-secs">--</div>
+        <div class="cd-label">Seconds</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ LETTER ══ -->
+  <section id="letter-section" class="fade-up">
+    <p class="section-label">From the Heart</p>
+    <h2>A Letter to the <span style="color:var(--gold)">Strongest Man</span> I Know</h2>
+    <div class="letter-card">
+      <p>Assalamualaikum <strong>Bhaijan</strong>,</p>
+      <p>I've watched you carry things quietly — responsibilities, pressures, and duties that would break most people —
+        and you carried them like it was nothing. You never complained. You just showed up, every single time.</p>
+      <p>There's a calm strength to you that I've tried to copy my whole life. The way you give without keeping score.
+        At 19, I'm still figuring out who I am — but I know that some of the best parts of me come from watching you.
+      </p>
+      <p><strong>Today, the spotlight is yours.</strong> Celebrating 34 incredible years of being you. You deserve every
+        bit of joy this day brings.</p>
+      <p>I love you more than I know how to say, Bhaijan. Happy Birthday. 🎂</p>
+      <div class="letter-sig">— Tahar chhotka bhai, Kamran 💛</div>
+    </div>
+    <div class="reaction-bar">
+      <button class="react-btn" onclick="react(this,'❤️')">❤️ <span class="react-count">0</span></button>
+      <button class="react-btn" onclick="react(this,'🔥')">🔥 <span class="react-count">0</span></button>
+      <button class="react-btn" onclick="react(this,'😭')">😭 <span class="react-count">0</span></button>
+      <button class="react-btn" onclick="react(this,'💪')">💪 <span class="react-count">0</span></button>
+      <button class="react-btn" onclick="react(this,'👑')">👑 <span class="react-count">0</span></button>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ PHOTO MEMORIES ══ -->
+  <section id="timeline-section" class="fade-up">
+    <p class="section-label">Through the Years</p>
+    <h2>34 Years of <span style="color:var(--gold)">Memories Together</span></h2>
+    <p style="color:var(--gray);line-height:1.8;max-width:560px;margin:0 auto 3rem;">
+      A few frames from a lifetime worth of moments.
+    </p>
+    <div class="photo-grid" id="photo-grid">
+
+      <div class="photo-card large">
+        <div class="photo-frame">
+          <img src="photo1.jpg" alt="Me and Bhaijan" onerror="this.parentElement.classList.add('placeholder')" />
+          <div class="photo-placeholder-inner">📷</div>
+        </div>
+        <div class="photo-caption">
+          <span class="photo-year">— early years</span>
+          <p>Add your caption here</p>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <div class="photo-frame">
+          <img src="photo2.jpg" alt="Me and Bhaijan" onerror="this.parentElement.classList.add('placeholder')" />
+          <div class="photo-placeholder-inner">📷</div>
+        </div>
+        <div class="photo-caption">
+          <span class="photo-year">— a random day</span>
+          <p>Add your caption here</p>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <div class="photo-frame">
+          <img src="photo3.jpg" alt="Me and Bhaijan" onerror="this.parentElement.classList.add('placeholder')" />
+          <div class="photo-placeholder-inner">📷</div>
+        </div>
+        <div class="photo-caption">
+          <span class="photo-year">— always there</span>
+          <p>Add your caption here</p>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <div class="photo-frame">
+          <img src="photo4.jpg" alt="Me and Bhaijan" onerror="this.parentElement.classList.add('placeholder')" />
+          <div class="photo-placeholder-inner">📷</div>
+        </div>
+        <div class="photo-caption">
+          <span class="photo-year">— growing up</span>
+          <p>Add your caption here</p>
+        </div>
+      </div>
+
+      <div class="photo-card wide">
+        <div class="photo-frame">
+          <img src="photo5.jpg" alt="Me and Bhaijan" onerror="this.parentElement.classList.add('placeholder')" />
+          <div class="photo-placeholder-inner">📷</div>
+        </div>
+        <div class="photo-caption">
+          <span class="photo-year">— together always</span>
+          <p>Add your caption here</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+  <section id="wishes-section" class="fade-up">
+    <p class="section-label">Send a Message</p>
+    <h2>Leave a <span style="color:var(--gold)">Message,</span> Bhaijan</h2>
+    <p style="color:var(--gray);line-height:1.8;max-width:520px;margin:0 auto;">
+      Write anything — a message, a memory, a dua. I will read every word. 💛
+    </p>
+    <div class="wishes-form">
+      <div class="form-success" id="form-success">
+        <div class="check">🎉</div>
+        <h3>Message Sent!</h3>
+        <p>I (Kamran) will see your message. JazakAllah Khair! 💛</p>
+      </div>
+      <form id="wish-form" action="https://formspree.io/f/xpqelvpz" method="POST">
+        <div class="form-group">
+          <label for="wish">Your Message, Bhaijan</label>
+          <textarea id="wish" name="wish" rows="6"
+            placeholder="Write your birthday wish, a memory, a dua — anything from your heart..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Message 💛</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    Made with <span>💛</span> by Kamran, for the greatest Bhaijan in the world. — June 12, 2026
+  </footer>
+
+  <!-- ══ MUSIC TOGGLE ══ -->
+  <button class="music-toggle" id="music-toggle" onclick="toggleMusic()">
+    🎵 Play Music
+  </button>
+
+  <script src="bhaijan_birthday.js" defer></script>
+</body>
+
+</html>
