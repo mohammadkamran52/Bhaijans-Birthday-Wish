@@ -83,18 +83,15 @@ class Sparkle {
   }
 }
 
-/* ── Core loop — ONE definition, no duplicates ── */
 function runAnimation() {
   particles_fw = particles_fw.filter(p => p.alpha > 0);
 
-  // True exit: no pending bursts AND all particles faded
   if (activeBursts === 0 && particles_fw.length === 0) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     animFrame = null;
     return;
   }
 
-  // Trail effect
   ctx.fillStyle = 'rgba(7, 16, 28, 0.20)';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -131,13 +128,11 @@ function spawnBurst(x, y, count, palette) {
   for (let i = 0; i < count; i++) {
     particles_fw.push(new FWParticle(x, y, pal));
   }
-  // add sparkles using first colour of palette
   for (let i = 0; i < 6; i++) {
     particles_fw.push(new Sparkle(x, y, pal[0][0]));
   }
 }
 
-/* ── Emoji-shaped burst for reactions ── */
 function spawnEmojiBurst(x, y, palette) {
   const count = 55;
   for (let i = 0; i < count; i++) {
@@ -147,7 +142,6 @@ function spawnEmojiBurst(x, y, palette) {
   }
 }
 
-/* ── launchFireworks — main fireworks (onload, celebrate) ── */
 function launchFireworks(count = 5) {
   activeBursts++;
   ensureLoopRunning();
@@ -158,15 +152,13 @@ function launchFireworks(count = 5) {
       spawnBurst(x, y, 100, PALETTES.fireworks);
     }, i * 300);
   }
-  // deregister after all bursts of this sequence have fired + small buffer
   setTimeout(() => { activeBursts = Math.max(0, activeBursts - 1); }, count * 300 + 100);
 }
 
-/* ── reaction burst — 2-3 seconds, theme-coloured ── */
 function reactionBurst(x, y, palette) {
   activeBursts++;
   ensureLoopRunning();
-  // 3 quick pops spread over 600ms
+
   for (let i = 0; i < 3; i++) {
     setTimeout(() => {
       const rx = x + (Math.random() - 0.5) * 80;
@@ -177,10 +169,9 @@ function reactionBurst(x, y, palette) {
   setTimeout(() => { activeBursts = Math.max(0, activeBursts - 1); }, 700);
 }
 
-/* ── Public API ── */
+
 function burstFireworks() { launchFireworks(7); }
 
-/* ── Auto-launch on load ── */
 window.addEventListener('load', () => setTimeout(() => launchFireworks(5), 600));
 
 
