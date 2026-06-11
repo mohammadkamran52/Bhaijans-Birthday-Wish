@@ -202,14 +202,11 @@ body {
   cursor: pointer;
   margin-top: 1.5rem;
   font-family: 'Inter', sans-serif;
-  /* 3D shadow stack */
+
   box-shadow:
     0 6px 0 #8a6a1a,
-    /* hard bottom edge — the "depth" */
     0 8px 16px rgba(0, 0, 0, .4),
-    /* soft ambient shadow */
     0 2px 4px rgba(201, 168, 76, .3) inset;
-  /* top highlight */
   transform: translateY(0);
   transition: transform .1s ease, box-shadow .1s ease;
 }
@@ -224,7 +221,6 @@ body {
 }
 
 .confetti-btn:active {
-  /* pressed down — loses the 3D depth */
   box-shadow:
     0 2px 0 #8a6a1a,
     0 4px 8px rgba(0, 0, 0, .3),
@@ -418,13 +414,11 @@ h2 {
   gap: 1.2rem;
 }
 
-/* large card spans 2 columns, 2 rows */
 .photo-card.large {
   grid-column: span 2;
   grid-row: span 2;
 }
 
-/* wide card spans 2 columns */
 .photo-card.wide {
   grid-column: span 2;
 }
@@ -444,17 +438,14 @@ h2 {
   border-color: rgba(201, 168, 76, .45);
 }
 
-/* ── frame holds the image ── */
 .photo-frame {
   position: relative;
   width: 100%;
-  /* nice tall aspect — tweak if your photos are landscape */
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #0a1a2a;
 }
 
-/* actual image */
 .photo-frame img {
   width: 100%;
   height: 100%;
@@ -467,12 +458,10 @@ h2 {
   transform: scale(1.04);
 }
 
-/* placeholder icon shown when image missing/errors */
 .photo-placeholder-inner {
   position: absolute;
   inset: 0;
   display: none;
-  /* hidden by default — shows only when .placeholder added */
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
@@ -493,12 +482,10 @@ h2 {
   display: flex;
 }
 
-/* large card gets bigger icon */
 .photo-card.large .photo-placeholder-inner {
   font-size: 4rem;
 }
 
-/* ── caption strip ── */
 .photo-caption {
   padding: .9rem 1.1rem;
   display: flex;
@@ -520,7 +507,7 @@ h2 {
   line-height: 1.5;
 }
 
-/* ── responsive: stack to 2 cols on tablet, 1 col on mobile ── */
+
 @media (max-width: 700px) {
   .photo-grid {
     grid-template-columns: repeat(2, 1fr);
