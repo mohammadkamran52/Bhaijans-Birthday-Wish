@@ -187,7 +187,7 @@ function updateCountdown() {
   if (today) {
     document.getElementById('countdown-grid').style.display = 'none';
     document.getElementById('bday-msg').style.display = 'block';
-    launchFireworks(10);
+    //launchFireworks(1);
     return;
   }
 
